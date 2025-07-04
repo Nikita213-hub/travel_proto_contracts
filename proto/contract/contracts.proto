@@ -5,7 +5,7 @@ package contracts.v1;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 
-option go_package = "github.com/Nikita213-hub/grpc_protobuf_study/pkg/proto/v1;contractsV1";
+option go_package = "github.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v1;contractsV1";
 
 
 enum ContractState {
