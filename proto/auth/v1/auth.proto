@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth.v1;
 
-option go_package = "github.com/Nikita213-hub/grpc_protobuf_study/pkg/proto/v1;authV1";
+option go_package = "github.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v1;authV1";
 
 
 service AuthService {

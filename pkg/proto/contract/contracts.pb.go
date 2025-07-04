@@ -731,7 +731,7 @@ const file_contract_contracts_proto_rawDesc = "" +
 	"\x10ContractsService\x12^\n" +
 	"\x0eCreateContract\x12#.contracts.v1.CreateContractRequest\x1a'.contracts.v1.ContractOperationResponse\x12^\n" +
 	"\x0eUpdateContract\x12#.contracts.v1.UpdateContractRequest\x1a'.contracts.v1.ContractOperationResponse\x12R\n" +
-	"\vGetContract\x12 .contracts.v1.GetContractRequest\x1a!.contracts.v1.GetContractResponseBGZEgithub.com/Nikita213-hub/grpc_protobuf_study/pkg/proto/v1;contractsV1b\x06proto3"
+	"\vGetContract\x12 .contracts.v1.GetContractRequest\x1a!.contracts.v1.GetContractResponseBJZHgithub.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v1;contractsV1b\x06proto3"
 
 var (
 	file_contract_contracts_proto_rawDescOnce sync.Once

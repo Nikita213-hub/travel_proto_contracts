@@ -250,7 +250,7 @@ const file_auth_v1_auth_proto_rawDesc = "" +
 	"\x03exp\x18\x04 \x01(\x03R\x03exp2\x86\x01\n" +
 	"\vAuthService\x126\n" +
 	"\bGenToken\x12\x14.auth.v1.GenTokenReq\x1a\x14.auth.v1.GenTokenRes\x12?\n" +
-	"\vVerifyToken\x12\x17.auth.v1.VerifyTokenReq\x1a\x17.auth.v1.VerifyTokenResBBZ@github.com/Nikita213-hub/grpc_protobuf_study/pkg/proto/v1;authV1b\x06proto3"
+	"\vVerifyToken\x12\x17.auth.v1.VerifyTokenReq\x1a\x17.auth.v1.VerifyTokenResBEZCgithub.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v1;authV1b\x06proto3"
 
 var (
 	file_auth_v1_auth_proto_rawDescOnce sync.Once
