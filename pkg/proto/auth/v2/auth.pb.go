@@ -422,9 +422,9 @@ const file_auth_v2_auth_proto_rawDesc = "" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"*\n" +
 	"\x0eLogoutResponse\x12\x18\n" +
 	"\asuccess\x18\x01 \x01(\bR\asuccess2\x89\x02\n" +
-	"\vAuthService\x126\n" +
-	"\x05Login\x12\x15.auth.v2.LoginRequest\x1a\x16.auth.v2.LoginResponse\x12D\n" +
-	"\rValidateToken\x12\x18.auth.v2.ValidateRequest\x1a\x19.auth.v2.ValidateResponse\x12A\n" +
+	"\vAuthService\x12D\n" +
+	"\rValidateToken\x12\x18.auth.v2.ValidateRequest\x1a\x19.auth.v2.ValidateResponse\x126\n" +
+	"\x05Login\x12\x15.auth.v2.LoginRequest\x1a\x16.auth.v2.LoginResponse\x12A\n" +
 	"\fRefreshToken\x12\x17.auth.v2.RefreshRequest\x1a\x18.auth.v2.RefreshResponse\x129\n" +
 	"\x06Logout\x12\x16.auth.v2.LogoutRequest\x1a\x17.auth.v2.LogoutResponseBEZCgithub.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v2;authV2b\x06proto3"
 
@@ -452,12 +452,12 @@ var file_auth_v2_auth_proto_goTypes = []any{
 	(*LogoutResponse)(nil),   // 7: auth.v2.LogoutResponse
 }
 var file_auth_v2_auth_proto_depIdxs = []int32{
-	0, // 0: auth.v2.AuthService.Login:input_type -> auth.v2.LoginRequest
-	2, // 1: auth.v2.AuthService.ValidateToken:input_type -> auth.v2.ValidateRequest
+	2, // 0: auth.v2.AuthService.ValidateToken:input_type -> auth.v2.ValidateRequest
+	0, // 1: auth.v2.AuthService.Login:input_type -> auth.v2.LoginRequest
 	4, // 2: auth.v2.AuthService.RefreshToken:input_type -> auth.v2.RefreshRequest
 	6, // 3: auth.v2.AuthService.Logout:input_type -> auth.v2.LogoutRequest
-	1, // 4: auth.v2.AuthService.Login:output_type -> auth.v2.LoginResponse
-	3, // 5: auth.v2.AuthService.ValidateToken:output_type -> auth.v2.ValidateResponse
+	3, // 4: auth.v2.AuthService.ValidateToken:output_type -> auth.v2.ValidateResponse
+	1, // 5: auth.v2.AuthService.Login:output_type -> auth.v2.LoginResponse
 	5, // 6: auth.v2.AuthService.RefreshToken:output_type -> auth.v2.RefreshResponse
 	7, // 7: auth.v2.AuthService.Logout:output_type -> auth.v2.LogoutResponse
 	4, // [4:8] is the sub-list for method output_type

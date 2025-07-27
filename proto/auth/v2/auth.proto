@@ -6,8 +6,8 @@ option go_package = "github.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v
 
 
 service AuthService {
-    rpc Login(LoginRequest) returns (LoginResponse);
     rpc ValidateToken(ValidateRequest) returns (ValidateResponse);
+    rpc Login(LoginRequest) returns (LoginResponse);
     rpc RefreshToken(RefreshRequest) returns (RefreshResponse);
     rpc Logout(LogoutRequest) returns (LogoutResponse);
 }
