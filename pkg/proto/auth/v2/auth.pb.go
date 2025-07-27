@@ -23,7 +23,7 @@ const (
 
 type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Username      string                 `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -59,9 +59,9 @@ func (*LoginRequest) Descriptor() ([]byte, []int) {
 	return file_auth_v2_auth_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *LoginRequest) GetUsername() string {
+func (x *LoginRequest) GetEmail() string {
 	if x != nil {
-		return x.Username
+		return x.Email
 	}
 	return ""
 }
@@ -171,8 +171,8 @@ func (x *ValidateRequest) GetAccessToken() string {
 
 type ValidateResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserId        string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	IsValid       bool                   `protobuf:"varint,2,opt,name=is_valid,json=isValid,proto3" json:"is_valid,omitempty"`
+	IsValid       bool                   `protobuf:"varint,1,opt,name=is_valid,json=isValid,proto3" json:"is_valid,omitempty"`
+	ExpiresAt     int64                  `protobuf:"varint,2,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -207,18 +207,18 @@ func (*ValidateResponse) Descriptor() ([]byte, []int) {
 	return file_auth_v2_auth_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ValidateResponse) GetUserId() string {
-	if x != nil {
-		return x.UserId
-	}
-	return ""
-}
-
 func (x *ValidateResponse) GetIsValid() bool {
 	if x != nil {
 		return x.IsValid
 	}
 	return false
+}
+
+func (x *ValidateResponse) GetExpiresAt() int64 {
+	if x != nil {
+		return x.ExpiresAt
+	}
+	return 0
 }
 
 type RefreshRequest struct {
@@ -401,18 +401,19 @@ var File_auth_v2_auth_proto protoreflect.FileDescriptor
 
 const file_auth_v2_auth_proto_rawDesc = "" +
 	"\n" +
-	"\x12auth/v2/auth.proto\x12\aauth.v2\"F\n" +
-	"\fLoginRequest\x12\x1a\n" +
-	"\busername\x18\x01 \x01(\tR\busername\x12\x1a\n" +
+	"\x12auth/v2/auth.proto\x12\aauth.v2\"@\n" +
+	"\fLoginRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\"W\n" +
 	"\rLoginResponse\x12!\n" +
 	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
 	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"4\n" +
 	"\x0fValidateRequest\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"F\n" +
-	"\x10ValidateResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x19\n" +
-	"\bis_valid\x18\x02 \x01(\bR\aisValid\"5\n" +
+	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"L\n" +
+	"\x10ValidateResponse\x12\x19\n" +
+	"\bis_valid\x18\x01 \x01(\bR\aisValid\x12\x1d\n" +
+	"\n" +
+	"expires_at\x18\x02 \x01(\x03R\texpiresAt\"5\n" +
 	"\x0eRefreshRequest\x12#\n" +
 	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"4\n" +
 	"\x0fRefreshResponse\x12!\n" +
