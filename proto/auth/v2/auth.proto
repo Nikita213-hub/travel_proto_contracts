@@ -6,44 +6,39 @@ option go_package = "github.com/Nikita213-hub/travel_proto_contracts/pkg/proto/v
 
 
 service AuthService {
-    rpc ValidateToken(ValidateRequest) returns (ValidateResponse);
-    rpc Login(LoginRequest) returns (LoginResponse);
-    rpc RefreshToken(RefreshRequest) returns (RefreshResponse);
-    rpc Logout(LogoutRequest) returns (LogoutResponse);
+  rpc StartLogin(LoginRequest) returns (LoginResponse);
+  rpc VerifyCode(VerifyCodeRequest) returns (VerifyCodeResponse);
+  rpc GetSession(SessionRequest) returns (Session);
+  rpc EndSession(SessionRequest) returns (EndSessionResponse);
 }
 
+message LoginRequest { 
+    string email = 1; 
+}
 
-message LoginRequest {
+message LoginResponse { 
+    string message = 1;
+}
+
+message VerifyCodeRequest {
     string email = 1;
-    string password = 2;
-}
-  
-message LoginResponse {
-    string access_token = 1;
-    string refresh_token = 2;
+    string code = 2;
 }
 
-message ValidateRequest {
-    string access_token = 1;
+message VerifyCodeResponse { 
+    string session_id = 1; 
 }
 
-message ValidateResponse {
-    bool is_valid = 1;
-    int64 expires_at = 2;
+message SessionRequest { 
+    string session_id = 1; 
 }
 
-message RefreshRequest {
-    string refresh_token = 1;
+message Session {
+    string id = 1;
+    string email = 2;
+    int64 expires_at = 3;
 }
 
-message RefreshResponse {
-    string access_token = 1;
-}
-
-message LogoutRequest {
-    string refresh_token = 1;
-}
-
-message LogoutResponse {
-    bool success = 1;
+message EndSessionResponse {
+    string message = 1;
 }
